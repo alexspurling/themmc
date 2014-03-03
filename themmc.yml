@@ -1,19 +1,12 @@
 ---
-- hosts: ansibletest
-  tasks: 
-    - name: Installs nginx web server
-      apt: pkg=nginx state=installed update_cache=true
-      notify:
-        - start nginx
-    - name: Copy nginx site config
-      copy: src=nginx/themmc dest=/etc/nginx/sites-available
-    - name: Add symlink to sites-enabled
-      file: state=link src=/etc/nginx/sites-available/themmc dest=/etc/nginx/sites-enabled/themmc
-      notify:
-        - reload nginx
+- name: Install Wordpress, MySQL, Nginx, and PHP-FPM
+  hosts: wordpress-server
+  user: root
+  # remote_user: user
+  # sudo: yes
 
-  handlers:
-    - name: start nginx
-      service: name=nginx state=started
-    - name: reload nginx
-      service: name=nginx state=reloaded
+  roles:
+    - mysql 
+    - nginx
+    - php-fpm
+    - wordpress

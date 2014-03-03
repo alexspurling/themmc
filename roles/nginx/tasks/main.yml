@@ -4,6 +4,11 @@
 
 - name: Copy nginx site config
   template: src=themmc dest=/etc/nginx/sites-available
+
 - name: Add symlink to sites-enabled
   file: state=link src=/etc/nginx/sites-available/themmc dest=/etc/nginx/sites-enabled/themmc
-  notify: reload nginx
+  notify: restart nginx
+
+- name: Remove the default nginx config
+  file: state=absent path=/etc/nginx/sites-enabled/default
+  notify: restart nginx
