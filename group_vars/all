@@ -1,7 +1,7 @@
 ---
 # Which version of Wordpress to deploy
-wp_version: 3.8.1
-wp_sha256sum: 2c5c56dc77cc891eca3782a04e2706dcd460a7ebd96de03221bdc414b7eb3992
+wp_version: 3.9.2
+wp_sha256sum: 74012cdb2b93a8b99f72bfcc52503eb0f56db1711775c857c3ddf140c66b5bf0
 
 # These are the Wordpress database settings
 wp_db_name: wordpress 
