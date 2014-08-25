@@ -6,7 +6,6 @@ wp_sha256sum: 74012cdb2b93a8b99f72bfcc52503eb0f56db1711775c857c3ddf140c66b5bf0
 # These are the Wordpress database settings
 wp_db_name: wordpress 
 wp_db_user: wordpress
-wp_db_password: fOUyv6cVigvp0^bnbv!x
 
 # You shouldn't need to change this.
 mysql_port: 3306
@@ -27,11 +26,9 @@ core_update_level: true
 
 #Postfix config
 postfix_db_user: postfix
-postfix_db_password: postfixpassword
 postfix_db_table: wp_pf_aliases
 
 #Monit
-monit_alert_email: foo@example.com
-monit_user: monituser
-monit_password: monitpassword #This is actually the password so don't even bother to try it
+monit_user: monit
 monit_disk_name: /dev/vda1 #This is the name of the disk to monitor for disk space usage
+
