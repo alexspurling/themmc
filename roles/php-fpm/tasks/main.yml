@@ -11,3 +11,7 @@
 - name: Copy php-fpm configuration
   template: src=wordpress.conf dest=/etc/php5/fpm/pool.d/
   notify: restart php-fpm
+
+- name: Copy php.ini configuration
+  template: src=php.ini dest=/etc/php5/fpm/php.ini
+  notify: restart php-fpm
