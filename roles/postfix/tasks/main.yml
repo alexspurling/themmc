@@ -1,0 +1,20 @@
+- name: Install postfix
+  apt: pkg=postfix state=present
+
+- name: Install postfix-mysql
+  apt: pkg=postfix-mysql state=present
+  notify: setup postfix database
+
+- name: Copy postfix config
+  template: src=main.cf dest=/etc/postfix/main.cf
+
+- name: Copy mysql virtual alias map
+  template: src=mysql_virtual_alias_maps.cf dest=/etc/postfix/mysql_virtual_alias_maps.cf
+
+- name: Copy over database setup script
+  template: src=postfixdatabase.sql dest=~/postfixdatabase.sql
+  register: copydbsetup
+
+- name: Run database setup script
+  shell: mysql < ~/postfixdatabase.sql
+  when: copydbsetup|changed

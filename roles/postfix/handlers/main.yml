@@ -1,0 +1,2 @@
+- name: setup postfix database
+  mysql_db: name=example state=import target=postfixdatabase.sql

@@ -1,0 +1,7 @@
+user = postfix
+password = postfixpassword
+hosts = 127.0.0.1
+dbname = wordpress
+table = wp_pf_aliases
+select_field = goto
+where_field = address
