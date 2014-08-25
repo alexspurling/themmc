@@ -1,6 +1,6 @@
-USE wordpress;
+USE {{ wp_db_name }};
 
-CREATE TABLE IF NOT EXISTS `wp_pf_aliases` (
+CREATE TABLE IF NOT EXISTS `{{ postfix_db_table }}` (
   `address` varchar(255) NOT NULL DEFAULT '',
   `goto` text NOT NULL,
   `domain` varchar(255) NOT NULL DEFAULT '',
@@ -11,4 +11,3 @@ CREATE TABLE IF NOT EXISTS `wp_pf_aliases` (
   KEY `address` (`address`)
 );
 
-GRANT SELECT ON wordpress.wp_pf_aliases TO 'postfix'@'localhost' IDENTIFIED BY 'postfixpassword';

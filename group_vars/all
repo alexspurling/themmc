@@ -24,3 +24,8 @@ auto_up_disable: false
 #false = Development, minor, and major updates are all disabled
 #minor = Minor updates are enabled, development, and major updates are disabled
 core_update_level: true
+
+#Postfix config
+postfix_db_user: postfix
+postfix_db_password: postfixpassword
+postfix_db_table: wp_pf_aliases

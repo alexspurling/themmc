@@ -1,7 +1,7 @@
-user = postfix
-password = postfixpassword
+user = {{ postfix_db_user }}
+password = {{ postfix_db_password }}
 hosts = 127.0.0.1
-dbname = wordpress
-table = wp_pf_aliases
+dbname = {{ wp_db_name }}
+table = {{ postfix_db_table }}
 select_field = goto
 where_field = address

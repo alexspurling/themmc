@@ -15,6 +15,9 @@
   template: src=postfixdatabase.sql dest=~/postfixdatabase.sql
   register: copydbsetup
 
-- name: Run database setup script
-  shell: mysql < ~/postfixdatabase.sql
+- name : Run postfix database setup script
+  mysql_db: name={{ wp_db_name}} state=import target=/root/postfixdatabase.sql
   when: copydbsetup|changed
+
+- name: Create Wordpress database user
+  mysql_user: name={{ postfix_db_user }} password={{ postfix_db_password}} priv=wordpress.{{ postfix_db_table }}:SELECT host='localhost' state=present
