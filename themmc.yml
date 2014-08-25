@@ -12,3 +12,4 @@
     - wordpress
     - postfix
     - fail2ban
+    - monit

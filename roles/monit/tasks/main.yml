@@ -1,0 +1,12 @@
+- name: Install monit
+  apt: name=monit state=present
+
+- name: Copy monit configuration
+  template: src=monitrc dest=/etc/monit/monitrc
+  notify: restart monit
+
+- name: Copy the monit configuration includes
+  template: src={{ item }} dest=/etc/monit/conf.d/
+  with_fileglob:
+    - '*monit'
+  notify: restart monit

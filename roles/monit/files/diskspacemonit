@@ -1,0 +1,2 @@
+check filesystem maindisk with path {{ monit_disk_name }}
+      if space usage > 50% then alert

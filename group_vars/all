@@ -29,3 +29,9 @@ core_update_level: true
 postfix_db_user: postfix
 postfix_db_password: postfixpassword
 postfix_db_table: wp_pf_aliases
+
+#Monit
+monit_alert_email: foo@example.com
+monit_user: monituser
+monit_password: monitpassword #This is actually the password so don't even bother to try it
+monit_disk_name: /dev/vda1 #This is the name of the disk to monitor for disk space usage
