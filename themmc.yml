@@ -11,3 +11,4 @@
     - php-fpm
     - wordpress
     - postfix
+    - fail2ban

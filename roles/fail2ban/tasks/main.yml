@@ -1,0 +1,11 @@
+- name: Install fail2ban
+  apt: name=fail2ban state=present
+
+- name: Install Wordpress fail2ban jail configuration
+  template: src=wordpress.conf dest=/etc/fail2ban/jail.d/
+  notify: restart fail2ban
+
+- name: Install Wordpress fail2ban filter configuration
+  template: src=wordpress-auth.conf dest=/etc/fail2ban/filter.d/
+  notify: restart fail2ban
+
