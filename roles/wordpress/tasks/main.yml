@@ -27,3 +27,6 @@
 
 - name: Change ownership of Wordpress installation
   file: path=/home/wordpress/wordpress/ owner=wordpress group=wordpress state=directory recurse=yes
+
+- name: Change ownership of wp-content directory
+  file: path=/home/wordpress/wordpress/wp-content/ owner=www-data group=www-data state=directory recurse=yes
