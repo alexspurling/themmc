@@ -33,6 +33,9 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/** This tries to make wordpress use direct file access when uploading plugins / upgrading itself etc **/
+define('FS_METHOD', 'direct');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *
@@ -91,3 +94,5 @@ define( 'AUTOMATIC_UPDATER_DISABLED', {{auto_up_disable}} );
 
 /** Define AUTOMATIC Updates for Components. */
 define( 'WP_AUTO_UPDATE_CORE', {{core_update_level}} );
+
+
