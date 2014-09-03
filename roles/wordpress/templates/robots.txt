@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /nl/
+Disallow: /address/
+Disallow: /members/
